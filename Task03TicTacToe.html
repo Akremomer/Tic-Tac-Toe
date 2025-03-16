@@ -150,7 +150,7 @@
         function startFireworks() {
     const container = document.getElementById("fireworks-container");
 
-    // 🔥 Clear any existing fireworks before starting new ones
+    
     container.innerHTML = "";
 
     const fireworks = new Fireworks.default(container, { particles: 100 });
@@ -175,9 +175,9 @@
     let cells = document.querySelectorAll(".cell");
     let emptyCells = [...cells].map((cell, index) => cell.innerText === "" ? index : null).filter(index => index !== null);
 
-    // Instant first move (if AI starts)
+   
     if (emptyCells.length === 9) {
-        cells[4].innerText = "O"; // AI takes center
+        cells[4].innerText = "O"; 
         first = true;
         document.getElementById("turn-text").innerText = "Player 1's Turn";
         return;
@@ -193,7 +193,7 @@
     }
 }
 
-// Minimax with Alpha-Beta Pruning & Depth Limitation
+
 function minimax(board, player, depth, alpha, beta) {
     let emptyCells = board.map((cell, index) => cell.innerText === "" ? index : null).filter(index => index !== null);
 
@@ -229,7 +229,7 @@ function minimax(board, player, depth, alpha, beta) {
     return bestMove;
 }
 
-// Win-checking function for AI
+
 function checkWinCondition(board, player) {
     const winPatterns = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
